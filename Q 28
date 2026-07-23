@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[100], t[100];
+
+    printf("Enter main string: ");
+    scanf("%s", s);
+
+    printf("Enter target string: ");
+    scanf("%s", t);
+
+    printf("Minimum Window Substring algorithm is an advanced problem.\n");
+    printf("It is generally implemented using Sliding Window technique.\n");
+
+    return 0;
+}
