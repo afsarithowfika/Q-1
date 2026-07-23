@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int last[256];
+    int i, start = 0, maxLen = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for(i = 0; i < 256; i++)
+        last[i] = -1;
+
+    for(i = 0; str[i] != '\0'; i++) {
+        if(last[(int)str[i]] >= start)
+            start = last[(int)str[i]] + 1;
+
+        last[(int)str[i]] = i;
+
+        if(i - start + 1 > maxLen)
+            maxLen = i - start + 1;
+    }
+
+    printf("Length of Longest Substring = %d\n", maxLen);
+
+    return 0;
+}
